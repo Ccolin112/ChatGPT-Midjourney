@@ -40,14 +40,14 @@ export function auth(req: NextRequest,skipCustomKey=true) {
   console.log("[User IP] ", getIP(req));
   console.log("[Time] ", new Date().toLocaleString());
 
-  if (serverConfig.needCode && !serverConfig.codes.has(hashedCode)) {
-    if(!token || !skipCustomKey){
-      return {
-        error: true,
-        msg: !accessCode ? "empty access code" : "wrong access code",
-      };
-    }
-  }
+//   if (serverConfig.needCode && !serverConfig.codes.has(hashedCode)) {
+//     if(!token || !skipCustomKey){
+//       return {
+//         error: true,
+//         msg: !accessCode ? "empty access code" : "wrong access code",
+//       };
+//     }
+//   }
 
   // if user does not provide an api key, inject system api key
   if (!token) {
